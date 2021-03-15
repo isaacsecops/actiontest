@@ -15,10 +15,14 @@ jobs:
         node-version: 13.x
     - run: npm ci
     - run: npm run build
-    - run: npm test
+    - run: npm run test:ci
       env:
         CI: true
-        
+    - name: Publish test results
+      uses: IgnusG/jest-report-action@v2.3.3
+      if: always() # Or use "continue-on-error: true" in previous test step
+      with:
+        access-token: ${{ secrets.GITHUB_TOKEN }}    
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:

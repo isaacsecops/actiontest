@@ -5,7 +5,7 @@ import Home from './Home';
 import External from './External';
 import Footer from './Footer';
 
-describe('App components', () => {
+describe('App.test.js', () => {
   test('<App />', () => {    
     render(<App />);
     const heading = screen.queryAllByText(/Home/i);

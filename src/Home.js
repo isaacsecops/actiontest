@@ -8,6 +8,7 @@ function Home() {
           <h1>
             Home
           </h1>
+          <p>Visit <a href="https://github.com/ClydeDz/github-actions-demo">this GitHub repository</a></p>
         </header>
       </div>
     );

@@ -5,10 +5,10 @@ import Home from './Home';
 import External from './External';
 import Footer from './Footer';
 
-describe('App.test.js', () => {
+describe('App.test.jsx', () => {
   test('<App />', () => {    
-    render(<App />);
-    const heading = screen.queryAllByText(/Home/i);
+    render(<App />); 
+    const heading = screen.queryAllByText(/Home/i); 
     expect(heading[0]).toBeInTheDocument();
   });
 

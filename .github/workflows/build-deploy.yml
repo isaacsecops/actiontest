@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   build:
@@ -30,7 +33,7 @@ jobs:
     
     - name: Publish test results
       uses: IgnusG/jest-report-action@v2.3.3
-      if: always() # Or use "continue-on-error: true" in previous test step
+      if: always()  
       with:
         access-token: ${{ secrets.GITHUB_TOKEN }}   
 
@@ -44,6 +47,7 @@ jobs:
     name: Deploy
     needs: build
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
     
     steps:
     - name: Download artifact

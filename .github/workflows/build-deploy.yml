@@ -37,6 +37,12 @@ jobs:
       with:
         access-token: ${{ secrets.GITHUB_TOKEN }}   
 
+    - name: Publish code coverage results
+      uses: romeovs/lcov-reporter-action@v0.2.16
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        lcov-file: ./coverage/lcov.info
+
     - name: Upload production-ready build files
       uses: actions/upload-artifact@v2
       with:

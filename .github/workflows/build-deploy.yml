@@ -1,4 +1,4 @@
-name:  Isaac build & deploy
+name:  Isaac test & deploy
 
 on:
   push:
@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    name: Build
+    name: Test
     runs-on: ubuntu-latest
     
     steps:
@@ -67,3 +67,4 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./build
+        

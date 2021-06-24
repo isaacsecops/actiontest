@@ -7,10 +7,6 @@ on:
   pull_request:
     branches:
       - main
-      - dev
-      - test
-      -  qa
-      - stage
       
 
 jobs:
